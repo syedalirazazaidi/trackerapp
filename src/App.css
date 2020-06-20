@@ -1,38 +1,199 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: hsl(240, 78%, 98%);
+    color: hsl(232, 13%, 33%);
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.container{
+    max-width: 25%;
+    width: 1200px;
+    text-align: center;
+    margin-right: 130px;
+    align-items: center;
+    /* justify-content: center; */
+    margin: auto;
+    margin: 0 auto;
+    
+}
+h1{
+    color: hsl(233,13%,49%);
+}
+.toggle-container{
+color: hsl(234, 14%, 74%);
+margin-top: 5px;
+margin-bottom: 55px;
+}
+.tracker-app{
+    background-color: #fff;
+    /* width: 350px; */
+    margin-top: 80px;
+    flex-wrap: wrap;
+    padding: 30px;
+    border-radius: 10px;
+    
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    background-image: linear-gradient(
+        to right,
+        hsl(236,72%,79%),
+        hsl(237,63%,64%)
+    
+        );
+        color: #fff;
+        transform: scale(1.15);
+       
+}
+.tracker-app ::placeholder
+{
+opacity: 0.5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+.tracker-app ul{
+    /* border-bottom: 1px solid hsl(233, 13%, 49%); */
+    padding: 0;
+    list-style-type: none;
+}
+.tracker-app ul li{
+    padding: 15px 0;
+    /* border-bottom: 1px solid hsl(233, 13%, 49%); */
+}
+.btn{
+    background-image: linear-gradient(
+    to right,
+    hsl(236,72%,79%),
+    hsl(237,63%,64%)
+
+    );
+    text-transform: uppercase;
+    border-color: #cfcfcf;
+    /* font-size: 15px; */
+    border: none;
+    color: hsl(237,63%,64%);
+    background-image: none;
+    background-color: #fff;
+    padding: 8px;
+    width: 83%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    margin-top: 7px;
+}
+.toggle-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.toggle-container label {
+	background-image: linear-gradient(
+		to right,
+		hsl(236, 72%, 79%),
+		hsl(237, 63%, 64%)
+	);
+	border-radius: 50px;
+	cursor: pointer;
+	display: inline-block;
+	margin: 0 10px;
+	position: relative;
+	height: 30px;
+	width: 60px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.toggle-container label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 2.5px;
+	left: 2.5px;
+	height: 25px;
+	width: 25px;
+	transition: transform 0.4s ease;
+}
+.toggle-container input{
+    position: absolute;
+    left: -9999px;
 }
 
-.App-link {
-  color: #61dafb;
+.tracker-app input {
+ /* width: 100%; */
+ padding: 7px;
+ border-radius: 8px;
+ border: none;
+}
+.dlt-btn:hover{
+ opacity: 1;
+ text-decoration: line-through;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.toggle-container input:checked + label .ball {
+    transform: translateX(30px);
+    
+}
+@media  screen and (max-width: 930px) {
+    .container{
+        width: 200px;
+        max-width: 100%;
+        overflow: hidden
+        
+    }
+    h1 {
+      text-transform: uppercase;
+     justify-content: center;
+     display: grid;
+   align-items: center;
+    }
+    h2{
+        line-height: 30px;
+       text-align: center;
+       justify-content: center;
+       display: inline-block;
+    }
+    .dlt-btn:hover{
+        opacity: 1;
+        text-decoration: line-through;
+       }
+	
+ .tracker-app{
+     justify-content: center;
+     width: 200px;
+     /* max-width: 100%; */
+     align-items: center;
+     margin-right: 80px;
+     background-color: #fff;
+     padding: 17px;
+     margin: 20px 0px;
+     border-radius: 10px;
+     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+     background-image: linear-gradient(
+         to right,
+         hsl(236,72%,79%),
+         hsl(237,63%,64%)
+     
+         );
+         color: #fff;
+         transform: scale(1.15);
+ }
+ /* */
+ .tracker-app input{
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px 65px
+ }
+ .tracker-app button{
+     padding: 7px;
+     width: 100%;
+
+ }
+ 
+	
 }

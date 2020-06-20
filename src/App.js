@@ -1,25 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{useState} from 'react';
 import './App.css';
 
+import { Balance } from './components/Balance';
+import { TransationalList } from './components/TransationalList';
+import { AddTransation } from './components/AddTransation';
+import { GLobalProvider } from './context/GlobalState';
+
 function App() {
+  const [btn,setBtn] = useState(false)
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GLobalProvider>
+    <div className="container">
+    <h1>Expence Tracker App</h1>
+    <h2 style={{marginTop:'0px'}}><Balance/></h2>
+    
+  
+    <div className="toggle-container">
+      <span>income</span>
+      <span>
+          <input type="checkbox" name="toggle" id="toggle" />
+          <label htmlFor="toggle" value ={btn} onChange={(e)=>setBtn(console.log(e.target.value))}>
+              <div className="ball"></div>
+          </label>
+      </span>
+      <span>expence</span>
+  </div>
+   
+    
+      <div className="tracker-app">
+        <h4><TransationalList/></h4>
+        <hr/>
+       <AddTransation/>
+      </div>
+    
+  </div>
+  </GLobalProvider> 
   );
 }
 
