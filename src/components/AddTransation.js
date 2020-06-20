@@ -52,7 +52,7 @@ export const AddTransation = () => {
             // addTransation(dltTransaction);
             // setText("");
             // setAmount("");
-          }}>Add Expences</button>
+          }}>Add Expense</button>
           </li>
         </ul>
         </form>
